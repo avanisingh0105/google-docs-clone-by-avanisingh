@@ -5,9 +5,9 @@ import Button from "@material-tailwind/react/Button";
 import Image from "next/image";
 import { getSession, useSession } from "next-auth/client";
 import Login from "../components/Login";
-import Modal from "@material-tailwind/react/modal";
-import Modalbody from "@material-tailwind/react/modalbody";
-import ModalFooter from "@material-tailwind/react/modalFooter";
+import Modal from "@material-tailwind/react/modal.js";
+import Modalbody from "@material-tailwind/react/modalbody.js";
+import ModalFooter from "@material-tailwind/react/modalFooter.js";
 import { useState } from "react";
 import { db } from "../firebase";
 import firebase from "firebase";
@@ -31,6 +31,7 @@ export default function Home() {
   };
   
   const modal = (
+    
     <Modal size="sm" active={showModal} toggler={() => setShowModal(false)}>
       <Modalbody>
         <input
