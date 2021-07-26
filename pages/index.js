@@ -6,8 +6,7 @@ import Image from "next/image";
 import { getSession, useSession } from "next-auth/client";
 import Login from "../components/Login";
 import Modal from "@material-tailwind/react/Modal";
-import Modalbody from "@material-tailwind/react/Modalbody";
-import ModalFooter from "@material-tailwind/react/ModalFooter";
+
 import { useState } from "react";
 import { db } from "../firebase";
 import firebase from "firebase";
@@ -33,7 +32,7 @@ export default function Home() {
   const modal = (
     
     <Modal size="sm" active={showModal} toggler={() => setShowModal(false)}>
-      <Modalbody>
+      <div>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)} //as user type
@@ -42,8 +41,8 @@ export default function Home() {
           placeholder="Enter name of document..."
           onKeyDown={(e) => e.key === "Enter" && createDocument()}
         />
-      </Modalbody>
-      <ModalFooter>
+      </div>
+      <div>
         <Button
           color="blue"
           buttonType="link"
@@ -55,7 +54,7 @@ export default function Home() {
         <Button color="blue" onClick={createDocument} ripple="light">
           Create
         </Button>
-      </ModalFooter>
+      </div>
     </Modal>
   );
   return (
